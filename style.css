@@ -1,0 +1,1176 @@
+body{
+	font-family: 'Nunito', sans-serif;
+	min-width: 320px;
+	color: black;
+	background-color: #fff;
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+section{
+	padding: 100px 0;
+}
+#top {
+	bottom: 20px;
+	right: 20px;
+
+	padding: 0px 5px;
+
+	background-color: #712fda;
+	color: #fff;
+	border-radius: 50px;
+	cursor: pointer;
+	display: none;
+	font-size: 200%;
+	position: fixed;
+
+	box-shadow: 0 0 10px rgba(108,25,246,0.8);
+	z-index: 9999;
+  }
+
+  /* preloader  */
+  .preloader {
+	/*фиксированное позиционирование*/
+	position: fixed;
+	/* координаты положения */
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	/* фоновый цвет элемента */
+	background: #e0e0e0;
+	/* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+	z-index: 1001;
+  }
+  
+  .preloader__row {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	width: 70px;
+	height: 70px;
+	margin-top: -35px;
+	margin-left: -35px;
+	text-align: center;
+	animation: preloader-rotate 2s infinite linear;
+  }
+  
+  .preloader__item {
+	display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9370DB;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  .preloader__item:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #BA55D3;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+  
+  .preloader__item:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF00FF;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+  
+  .loaded_hiding .preloader {
+	transition: 0.3s opacity;
+	opacity: 0;
+  }
+  
+  .loaded .preloader {
+	display: none;
+  }
+
+
+/* ====================header ===========================*/
+.header {
+	background-color: #E5F4F5;
+}
+/* links animation*/
+.nav-link {
+	color: #712fda;
+	font-size: 18px;
+	
+	position: relative;
+	padding: 0;
+	cursor: pointer;
+	line-height: 1; /*задаём высоту строки*/
+	text-decoration: none; /*убираем подчёркивание*/
+	
+	margin-left: 20px;
+}
+
+.nav-link:hover {
+	color: #712fda
+}
+
+.nav-link:after {
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 2px; /*задаём ширину линии*/
+	background-color: #712fda; /*задаём цвет линии*/
+	content: "";
+	transition: width 0.3s ease-out; /*задаём время анимации*/
+
+	margin-top: 10px;
+}
+.nav-link:hover:after,
+.nav-link:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+	
+}
+
+/* end oflinks animation*/
+
+/* ==================== after header ===========================*/
+
+.after-header {
+	background-color: #E5F4F5;
+	color: #2b044d;
+}
+.row-after {
+	display: flex;
+	align-items: center;
+}
+
+.after-header h5 {
+	text-transform: uppercase;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.after-header h1 {
+	font-size: 78px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	width: 80%;
+}
+
+.after-header p {
+	font-size: 16px;
+	font-weight: 400;
+	width: 60%;
+	color: #707b8e;
+}
+
+.btn-download {
+	background-color: #F9218D;
+	font-size: 18px;
+	font-weight: 400;
+	color: #fff;
+	border: none;
+	border-radius: 50px;
+	padding: 15px 50px;
+
+	margin-right: 20px;
+	
+	transition: all 0.3s ease-in 0s;
+}
+
+.btn-download:hover {
+	background-color: #B71867;
+	transition: all 0.3s ease-out 0s;
+	
+}
+.play-icon {
+	width: 67px;
+	height: 67px;
+	transition: all 0.3s ease-in 0s;
+}
+.play-icon:hover {
+	transition: all 0.3s ease-out 0s;
+	transform: scale(1.2);
+}
+
+/* ==================== some of th features ===========================*/
+
+.some-of-the-feature h1 {
+	font-size: 48px;
+	font-weight: 600;
+	color:  #2b044d;
+	margin-bottom: 40px;
+	width: 50%;
+}
+.best-feature {
+	width: 1000px;
+	height: 500px;
+}
+.some-blocks-row-1, .some-blocks-row-2 {
+	display: flex;
+	flex-wrap: wrap;
+	width: auto;
+}
+
+.some-of-the-feature h5 {
+	font-weight: 600;
+}
+.some-of-the-feature p{
+	color: #707b8e;
+}
+.some-of-inner {
+	display: flex;
+	justify-content: space-between;
+}
+.some-blocks {
+	display: flex;
+	margin-left: 50px;
+}
+.some-icon{
+	margin-bottom: 10px;
+}
+.some-text p {
+	width: 80%;
+}
+
+
+
+
+/* ==================== how-can-we-help-you ===========================*/
+
+.how-can-we-help-you {
+	background-color: #E5F4F5;
+	height: auto;
+}
+
+.how-title {
+	font-size: 52px;
+	font-weight: 700;
+	color:  #2b044d;
+	margin-bottom: 40px;
+	text-align: center;
+}
+.how-cards-block {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.how-card {
+	border: 1px solid #ffffff;
+	transition: all 0.2s ease-in 0s;
+	box-shadow: none;
+	width: 30%;
+	background-color: #fff;
+	text-align: center;
+	padding-top: 50px;
+	height: 350px;
+	margin: 0 auto;
+}
+.how-card:hover {
+	border: 1px solid #712fda;
+	transition: all 0.2s ease-out 0s;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.how-card-title{
+	font-size: 24px;
+	margin-top: 40px;
+	font-weight: 700;
+}
+.how-text {
+	margin: 0 auto;
+	font-size: 16px;
+}
+/* ==================== applic-apps-screenshot ===========================*/
+.left-info {
+	margin-top: 80px;
+
+}
+.applic-apps-screenshot h1 {
+	font-size: 46px;
+	font-weight: 600;
+	color:  #2b044d;
+	margin-bottom: 40px;
+
+}
+
+.applic-apps-screenshot p {
+	color: #707b8e;
+	width: 90%;
+}
+
+/* ==================== Choose Your Very Best Pricing Plan ===========================*/
+
+.choose {
+	background-image: url(images/gallery/best_pricingbg.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: auto;
+}
+.choose h1 {
+	margin-top: 20px;
+	color: #fff;
+	font-size: 56px;
+	font-weight: 700;
+	margin: 20px auto;
+	width: 100%;
+	text-align: center;
+}
+.choose-row {
+	margin-top: 100px;
+	display: flex;
+	justify-content: space-around;
+}
+.choose-card {
+	background-color: #ffffff;
+	border: none;
+	height: 500px;
+	width: 25%;
+	border-radius: 4px;
+	text-align: center;
+	padding: 60px 0 20px 0;	
+}
+.choose-card .cost {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.choose-card hr {
+	width: 80%;
+	margin: 0 auto;
+}
+.choose-card h5 {
+	font-size: 20px;
+	color: #6a56a6;
+}
+.cost span {
+	font-weight: 700;
+	font-size: 48px;
+	color: #6a56a6;
+}
+.cost p {
+	margin-left: 10px;
+	padding-top: 30px;
+}
+.choose-card h6 {
+	color: #707b8e;
+	margin: 20px auto;
+}
+/* buton  */
+
+.get-started{
+	background-color: #712fda;
+	color: #fff;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 5px;
+	margin-top: 20px;
+	padding: 15px 30px;
+    overflow:hidden;
+	z-index:1;
+   position:relative;
+  -webkit-transition: 1s ease-out;
+   transition: 1s ease-out;
+}
+
+
+.get-started:before{
+	background: #F9218D;
+	content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.get-started:hover::before {
+	left:0;  
+      z-index:-5;
+     -webkit-transform: scale(1.2);
+     transform: scale(1.2);
+   -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+      -webkit-transition-duration: 0.5s;
+     transition-duration: 0.5s;
+}
+
+/* end of btn  */
+
+
+/* ==================== What Our Customers Have to Say  ===========================*/
+
+.what-our-customers h1 {
+	font-size: 52px;
+	font-weight: 700;
+	color:  #2b044d;
+	margin-bottom: 100px;
+}
+.testimonials-carousel {
+	height: 349px;
+}
+
+.what-our-customers h3 {
+	margin-top: 20px;
+	font-size: 18px;
+	color: #712fda;
+}
+
+.what-our-customers p {
+	color: #707b8e;
+}
+
+/* ==================== Our-App-Available  ===========================*/
+
+.Our-App-Available {
+	background-image: url(images/shape/available-appbg.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #fff;
+}
+.Our-App-Available .row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.Our-App-Available h1 {
+	font-size: 48px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+.our-app-image {
+	width: 100%;
+	height: auto;
+}
+.Our-App-Available p {
+	margin-bottom: 20px;
+}
+/* --- pulse --*/
+.pulse{
+	position: relative;
+	left: 0px;
+	top: -30px;
+	width: 50px;
+	height: 50px;
+	
+	animation-name: pulse;
+	-webkit-animation-name: pulse;	
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.6);
+		opacity: 0.7;		
+	}
+	50% {
+		transform: scale(1);
+		opacity: 1;	
+	}	
+	100% {
+		transform: scale(0.6);
+		opacity: 0.7;	
+	}			
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(0.65);
+		opacity: 0.7;		
+	}
+	50% {
+		-webkit-transform: scale(1);
+		opacity: 1;	
+	}	
+	100% {
+		-webkit-transform: scale(0.65);
+		opacity: 0.7;	
+	}			
+}
+/* --- end of pulse --*/
+img.shape-left {
+	position: relative;
+	top: 100px;
+}
+
+
+/* ==================== say-hello  ===========================*/
+
+.say-hello {
+	padding: 0;
+	background-image: url(images/shape/say-shape-right.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	clip-path: inset(0 0 22% 0);
+	display: flex;
+	align-items: center;
+}
+.say-hello .row {
+	justify-content: space-between;
+	align-items: center;
+}
+.say-hello h1 {
+	font-size: 48px;
+	font-weight: 700;
+	color: #282828;
+	width: 60%;
+}
+
+/* round shape spin  */
+.image-say-shape-left {
+	margin-left: -120px;
+	position: relative;
+	top: 80px;
+}
+
+.image-say-shape-left {
+   
+    -webkit-animation:spin 30s linear infinite;
+    -moz-animation:spin 30s linear infinite;
+    animation:spin 30s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+/* end of round shape spin  */
+
+
+
+/* buton  */
+
+.Contact-us {
+	background-color: #F9218D;
+	font-size: 18px;
+	font-weight: 400;
+	color: #fff;
+	border: none;
+	border-radius: 50px;
+	padding: 15px 50px;
+
+	margin-left: -100px;
+
+	overflow:hidden;
+	z-index:1;
+   position:relative;
+  -webkit-transition: 1s ease-out;
+   transition: 1s ease-out;
+	
+}
+
+.Contact-us:before{
+	background: #712fda;
+	content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.Contact-us:hover::before {
+	left:0;  
+      z-index:-5;
+     -webkit-transform: scale(1.2);
+     transform: scale(1.2);
+   -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+      -webkit-transition-duration: 0.5s;
+     transition-duration: 0.5s;
+}
+
+/* end of btn  */
+
+
+/* ==================== footer  ===========================*/
+.page-footer {
+	color: #707b8e;
+	margin: 30px auto;
+	border-top: 1px solid #F9218D;
+	padding-top: 80px;
+	margin-top: -75px;
+	position: absolute;
+	width: 100%;
+}
+.page-footer form {
+	height: 30px;
+	margin-right: 0;
+	right: 0;
+} 
+.page-footer h5 {
+	margin-bottom: 20px;
+	color: #282828;
+	font-weight: 700;
+	text-align: start;
+}
+.page-footer img {
+	margin-bottom: 20px;
+}
+.page-footer li {
+	list-style: none;
+	margin-bottom: 10px;
+}
+.text-after-logo {
+	margin-top: 20px;
+}
+.footer-copyright {
+	margin-top: 40px;
+}
+.footer-link {
+	color: #282828;
+	font-size: 18px;
+	transition: all 0.3s ease-in 0s;
+}
+.footer-link:hover {
+	text-decoration: none;
+	color: #712fda;
+	transition: all 0.3s ease-out 0s;	
+	margin-left: 10px;
+}
+.footer-form {
+	width: 245px;
+}
+.footer-form button {
+	height: 15px;
+	width: 30px;
+}
+.footer-icon-letter {
+	margin-top: 18px;
+	margin-left: -4px;
+}
+/* ==================== contact us page  ===========================*/
+	.contact-page .send-message {
+		border: 1px solid #712fda;
+		border-radius: 0;
+		color: #712fda;
+		font-size: 16px;
+		text-transform: uppercase;
+
+		padding: 20px 40px;
+
+		margin-top: 20px;
+
+		transition: all 0.3s ease-in-out 0s;
+	}
+
+	.contact-page input {
+		border-radius: 0;
+	}
+	
+	.contact-page textarea:focus {
+		border: 1px solid #712fda;
+		box-shadow: 0 0 10px rgba(108,25,246,0.8);;
+	}
+	
+	.contact-page input:focus {
+		border: 1px solid #712fda;
+		box-shadow: 0 0 10px rgba(108,25,246,0.8);;
+	}
+	
+	.contact-page .send-message:hover {
+		background-color: #712fda;
+		transition: all 0.3s ease-out 0s;
+		color: #fff;
+	}
+
+	.icon-home {
+		width: 100px;
+		height: 100px;
+	}
+
+
+/* ------------responsive ----------*/
+
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.after-header h1 {
+		font-size: 36px;
+	}
+	.some-of-the-feature {
+		margin-bottom: 50px;
+		margin-top: -50px;
+	}
+	.some-of-the-feature .right-colomn {
+		width: 600px;
+		margin-left: 0;
+	}
+
+	.choose-row {
+		justify-content: space-between;
+	}
+	.choose-card {
+		width: 30%;
+		
+	}
+	.Our-App-Available .shape-top {
+		left: 0;
+	} 
+	.say-hello {
+		height: auto;
+		padding: 30px 0;
+	}
+	.say-hello .row {
+		align-items: center;
+	}
+	.say-hello .image-say-shape-left {
+		display: none;
+	}
+	.page-footer {
+		margin-top: -38px;
+	}
+
+	.footer-icon-letter {
+		margin-top: -150px;
+	}
+	
+	#carousel1 {
+		width: auto;
+	}
+
+	.footer-icon-letter {
+		margin-top: 18px;
+		margin-left: -4px;
+	}
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.header .nav-link {
+		margin-top: 15px;
+		padding-bottom: 0;
+	}
+	.nav-link:after {
+		display: block;
+		position: absolute;
+		left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+		width: 0;/*задаём длинну линии до наведения курсора*/
+		height: 2px; /*задаём ширину линии*/
+		background-color: #712fda; /*задаём цвет линии*/
+		content: "";
+		transition: width 0.3s ease-out; /*задаём время анимации*/
+	
+		margin-top: 5px;
+	}
+	.nav-link:hover:after,
+	.nav-link:focus:after {
+		width: 30%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+		
+	}
+	.some-of-the-feature h1{
+		width: 100%;
+		text-align: center;
+	}
+	.some-img {
+		display: none;
+	}
+	.page-footer {
+		margin-bottom: 0;
+	}
+}
+
+@media only screen and (max-width : 991px) {
+	header {
+		padding-top: 10px;
+	}
+		
+	.after-header h1 {
+		font-size: 42px;
+	}
+
+	.some-of-the-feature {
+		margin-top: -50px;
+		left: 0;
+	}
+	.some-of-the-feature h1{
+		font-size: 42px;
+		margin-bottom: 50px;
+	}
+	.some-of-the-feature .first-block {
+		width: 650px;
+	}
+
+	.how-can-we-help-you h5 {
+		font-size: 16px;
+	}
+
+	.applic-apps-screenshot p {
+		width: 120%;
+	}
+	#carousel1 {
+		margin-left: 30px;
+	}
+
+	.applic-apps-screenshot h1 {
+		font-size: 36px;
+	}
+	.choose-row {
+		justify-content: space-between;
+	}
+	.choose-card {
+		width: 31%;	
+	}
+	.what-our-customers h1 {
+		font-size: 36px;
+	}
+	.say-hello {
+		margin: 0 auto;
+		height: auto;
+
+	}
+	.say-hello h1 {
+		font-size: 36px;
+	}
+
+	.say-hello .Contact-us {
+		padding: 10px 20px;
+		font-size: 14px;
+	}
+
+	.page-footer p{
+		font-size: 12px;
+	}
+
+	.page-footer ul a {
+		font-size: 14px;
+	}
+
+	
+	.page-footer input {
+		width: 130px;
+	}
+
+	.footer-form {
+		width: 190px;
+	}
+
+	.footer-icon-letter {
+		margin-top: 18px;
+		margin-left: -54px;
+	}
+
+	.page-footer form  a {
+		margin-left: 50px;
+	}
+
+	.Our-App-Available h1 {
+		font-size: 36px;
+	}
+	.Our-App-Available  a img {
+		margin-top: 10px;
+	}
+
+	/* contact us  */
+	
+	.contact-page .col-sm-2 {
+		padding: 0;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.row-after {
+		flex-wrap: wrap;
+	}
+	.after-header h1, h5 {
+		text-align: center;
+		width: 100%;
+	}
+	.after-header p {
+		width: 100%;
+		text-align: center;
+	}
+	.button-blocks {
+		display: flex;
+		justify-content: space-around;
+		width: 60%;
+		margin: 0 auto;
+	}
+	.some-of-the-feature h5 {
+		text-align: start;
+		width: 100%;
+	}
+	.right-colomn .first-block {
+		padding-right: 0;
+		padding-right: 0px;
+	}
+	
+	.choose .get-started {
+		font-size: 14px;
+		
+	}
+	.how-cards-block {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.how-card {
+		width: 100%;
+		margin: 10px auto;
+	}
+	.how-text {
+		font-size: 16px;
+		width: 50%;
+		margin: 0 auto;
+	}
+	.how-title {
+		font-size: 30px;
+	}
+	.Our-App-Available {
+		padding-bottom: 0;
+	}
+
+	.footer-copyright {
+		padding-left: 20px;
+	}
+
+	/* contact us  */
+	
+	.contact-page .col-sm-2 {
+		padding: 0px 30px;
+	}
+}
+
+@media only screen and (max-width : 767px) {
+	.how-can-we-help-you h5 {
+		font-size: 14px;
+	}
+	.applic-apps-screenshot h1 {
+		width: 100%;
+		text-align: center;
+	}
+
+	.applic-apps-screenshot p {
+		width: 100%;
+		text-align: center;
+	}
+	.left-info {
+		margin: 0 auto;
+	}
+	#carousel1 {
+		width: 100%;
+		margin: 0 auto;
+	}
+	.choose-row {
+		display: block;
+	}
+	.choose-card {
+		width: 60%;
+		margin: 10px auto;
+	}
+
+	.Our-App-Available .our-app-image {
+		margin-top: 0;
+	}
+	.say-hello {
+		margin: 50px auto;
+		padding: 30px 0;
+	}
+	.say-hello .row {
+		text-align: center;
+	}
+	.say-hello h1 {
+		width: 100%;
+	}
+	.Contact-us {
+		margin-left: 0;
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+	
+	.page-footer {
+		padding: 40px;
+		margin-top: -100px;
+		border: none;
+	}
+
+	.page-footer .change-width {
+		width: 220px;
+		margin-left: -40px;
+		
+	}
+
+	.page-footer h5 {
+		font-size: 14px;
+		text-align: s;
+	}
+
+	.footer-copyright {
+		margin-left: -30px;
+	}
+}
+
+@media only screen and (max-width : 722px) {
+	.page-footer .Newsletter {
+		margin-top: 20px;
+		margin-left: 0px;
+
+		
+	}
+	.page-footer input {
+		
+		font-size: 12px;
+	}
+	
+	.footer-form {
+		width: 190px;
+	}
+	.footer-icon-letter {
+		margin-top: 20px;
+		height: 24px;
+	}
+
+}
+
+@media only screen and (max-width : 575px) {
+	.some-of-the-feature h1 {
+		font-size: 30px;
+	}
+	.some-blocks {
+		flex-wrap: wrap;
+		margin: 0 auto;
+	}
+	.some-text p {
+		width: 100%;
+		text-align: center;
+	}
+	
+	.some-of-the-feature h5, .some-icon {
+		text-align: center;
+		width: 100%;
+	}
+	.some-blocks-row-1, .some-blocks-row-2 {
+		margin: 0 auto;
+		justify-content: center;
+	}
+	.how-cards-block {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.how-card {
+		width: 80%;
+		margin: 10px auto;
+	}
+	.how-text {
+		font-size: 16px;
+		width: 90%;
+		margin: 0 auto;
+	}
+	.footer-copyright {
+		padding-left: 30px;
+	}
+
+	.contact-page .col-sm-2 {
+		width: auto;
+		padding: 10px 15px;
+	}
+}
+
+@media only screen and (max-width : 520px) {
+	.choose .card-deck {
+		margin-left: 130px;
+		width: 50%;
+		left: 0;
+		
+	}
+}
+
+@media only screen and (max-width : 499px) {
+	.choose h1 {
+		font-size: 30px;
+	}
+	.choose-card {
+		width: 80%;
+		margin: 10px auto;
+	}
+	.how-card-title {
+		font-size: 20px;
+	}
+
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.button-blocks {
+		display: block;
+		text-align: center;
+	}
+	.btn-download {
+		margin: 10px auto;
+	}
+}
+
+@media only screen and (max-width : 390px) {
+	.after-header h1 {
+		font-size: 26px;
+	}
+	.after-header p {
+		font-size: 14px;
+		width: 100%;
+	}
+	.say-hello h1 {
+		font-size: 24px;
+	}
+}
+
+@media only screen and (max-width : 360px) {
+	.after-header .big-phone-image {
+		margin-right: 0px;
+	}
+	.choose .card-deck {
+		margin-left: 90px;
+		width: 50%;
+		left: 0;
+	}
+	.card {
+		width: 100%;
+	}
+}
